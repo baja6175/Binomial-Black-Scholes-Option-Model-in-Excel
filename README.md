@@ -1,84 +1,79 @@
-# 📈 Binomial-Black-Scholes-Option-Model-in-Excel
+# Binomial-Black-Scholes-Option-Model-in-Excel
 
-This Excel-based project implements a dynamic binomial tree framework to price European-style call and put options, simulate multi-period stock price movements, and demonstrate real-time delta hedging strategies. It also includes a Black-Scholes pricing comparison to validate model accuracy and deepen understanding of financial risk management.
-
----
-
-## 🚀 Features
-
-- 📊 **Stock Price Simulation** using a multi-period binomial tree
-- 💰 **European Option Valuation** via backward induction
-- ⚖️ **Delta Hedging Strategy** with real-time stock and bond positions
-- 🔄 **Dynamic Inputs**: update stock price, strike, u/d factors, interest rate, and periods
-- 📉 **Black-Scholes Comparison** for analytical pricing benchmark
-- 📐 **Clean and Visual Tree Layout** for intuitive understanding
+This project implements a dynamic binomial tree framework in Excel to price European-style call and put options, simulate multi-period stock price movements, and demonstrate real-time delta hedging strategies. It also includes a Black-Scholes pricing comparison to validate model accuracy and strengthen understanding of financial risk management techniques.
 
 ---
 
-## 📥 Inputs
+## Features
 
-| Parameter           | Description                          |
-|---------------------|--------------------------------------|
-| Initial Stock Price | Starting value of the stock (S₀)     |
-| Strike Price        | Exercise price of the option (K)     |
-| Up Factor (u)       | Upward movement multiplier           |
-| Down Factor (d)     | Downward movement multiplier         |
-| Risk-Free Rate (r)  | Interest rate used for discounting   |
-| Time Periods (N)    | Number of periods in the tree        |
-| Volatility (σ)      | Used for Black-Scholes calculation   |
+- Stock price simulation using a multi-period binomial tree
+- European option valuation via backward induction
+- Delta hedging strategy with replicating portfolio (stock and bond)
+- Fully dynamic inputs: stock price, strike, up/down factors, interest rate, and number of periods
+- Black-Scholes analytical comparison for model validation
+- Clean and structured layout to support learning and experimentation
 
 ---
 
-## 📘 How It Works
+## Inputs
 
-1. **Stock Tree** is built based on binomial up/down logic from user inputs
-2. **Option Payoff** is calculated at the final nodes using payoff formulas
-3. **Backward Induction** applies risk-neutral valuation to calculate earlier node values
-4. **Delta Hedging** is computed using the replicating portfolio method:
-   - Delta (Δ)
-   - Bond value (B)
-   - Portfolio value = Δ × Stock + B
-5. **Black-Scholes Formula** is used to compute an analytical option price and compare with the binomial result
-
----
-
-## 📎 Files Included
-
-- `[Binomial-Black-Scholes-Option-Model.xlsx](https://github.com/user-attachments/files/20140639/Binomial-Black-Scholes-Option-Model.xlsx).xlsx` — the main Excel workbook with stock tree, option tree, delta hedge table, and Black-Scholes calculator
+| Parameter           | Description                                |
+|---------------------|--------------------------------------------|
+| Initial Stock Price | Starting value of the stock (S₀)           |
+| Strike Price        | Exercise price of the option (K)           |
+| Up Factor (u)       | Multiplier for upward price movement       |
+| Down Factor (d)     | Multiplier for downward price movement     |
+| Risk-Free Rate (r)  | Interest rate used for discounting         |
+| Time Periods (N)    | Number of steps in the binomial model      |
+| Volatility (σ)      | Used in the Black-Scholes price calculation|
 
 ---
 
-## 📚 Concepts Covered
+## Model Overview
 
-- Binomial Option Pricing Model  
-- Black-Scholes Model  
-- Risk-Neutral Valuation  
-- Delta Hedging and Replication  
+1. **Stock Price Tree**: Constructed using user-defined up/down factors and number of periods.
+2. **Option Payoff**: Calculated at the terminal nodes for both call and put options.
+3. **Backward Induction**: Option values are computed recursively at each node using risk-neutral valuation.
+4. **Delta Hedging Table**: The hedge ratio (Δ), bond value (B), and portfolio value are computed at each node to simulate a replicating strategy.
+5. **Black-Scholes Comparison**: Provides the analytical price of the option using the closed-form Black-Scholes formula to compare against the binomial result.
+
+---
+
+## Files Included
+
+- `Binomial-Black-Scholes-Option-Model.xlsx` — Main Excel workbook including all trees, inputs, hedging logic, and comparison formulas.
+
+---
+
+## Concepts Covered
+
+- Binomial Tree Option Pricing
+- Black-Scholes Analytical Formula
+- Risk-Neutral Valuation
+- Delta Hedging and Portfolio Replication
 - Financial Risk Management
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
-- **Microsoft Excel**  
-- **Excel Formulas**: `IF`, `POWER`, `NORM.S.DIST`, `EXP`, `LN`, and custom payoff logic  
-- Optional use of `VLOOKUP`, `INDEX`, and `MATCH` for dynamic referencing
+- Microsoft Excel
+- Excel Functions: `IF`, `POWER`, `EXP`, `LN`, `NORM.S.DIST`
+- Dynamic referencing with `INDEX`, `MATCH`, and conditional logic
 
 ---
 
-## 📌 Author
+## Author
 
 **Diya Bajaj**  
 Undergraduate in Financial Mathematics & Analytics  
-Specializing in Financial Risk Management  
+Specializing in Financial Risk Management
 
 ---
 
-## 🧠 Notes
+## Notes
 
-- The model assumes European-style options (no early exercise).
-- Increasing the number of periods (N) improves convergence toward the Black-Scholes price.
-- Risk-neutral probabilities are derived from user-defined up/down factors and the risk-free rate.
-
----
+- The model supports European-style options only.
+- Increasing the number of periods improves accuracy and convergence toward the Black-Scholes value.
+- The hedging strategy is based on discrete-time delta replication.
 
